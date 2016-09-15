@@ -1,0 +1,39 @@
+Functions of the different SCRIPTS.
+S/N     NAMEOFFILE		FUNCTION
+1.      asciistdtable.ascii     	The ascii file (not a script)
+2.      test-tryingoutASCIItable		A perl script to generate and use a ASCII hash table
+3.      test-SortFastq.pl		Sorting a FASTQ illumina reads based on their second quality score
+4.      a0subroutine1.pm		A subroutine files for only test-SortFastq.pl
+5.      00-splitFASTQargefilestosmallerfiles.pl		It splits a large FASTQ file to smaller files
+6.      01-SortFastqreadsbasedon2ndqualityscore.pl		This sorts the Fastq files based on the 2nd quality score position, since the first position is the same
+7.      02-searchingforcommonSNPS.pl		It searches for commonSNP, but counts the unique ones and stores the unique one in output files.
+8.      03-searchingforsimilaralignmentsSAM.pl		This gets the similar alignments and not similar alignments between the diferent bowtie and/or clc results.
+9.      04-seperatingthemappedfromnotmapped.pl		This seperates the mapped from the not mapped files in an original bowtie results
+10.	05-searchingforonlyuniquealignmentsSAM.pl		Because 03-searchingforsimilaralignentsSAM.pl is very slow, I decided to create a file that only outputs the unique alignments only of the comparsion.
+11.     05b-searchingforonlyuniquealignmentsSAM.pl               This is similar to 03-searchingforsimilaralignentsSAM.pl but a lot faster.
+12. 	06-searchingforonlyuniquealignmentsSAMclc.pl		This gets only the unique alignments between SAM an CLC mapping results. 
+13.	07-removingskippedlinesinBOWTIEerrorreport.pl		This removes the error lines in the output result of the torque submission for bowtie, thus letting me see the important info. fast
+14.	08-grabimportantfirst10columnsofCLCSNPoutput.pl		CLC SNPs txt exports all the columns available, thus this script only gets the relevant columns (first 10) for easy perusal.
+15.	09-searchingforcommonSNPsbtwVCF&CLCtxt.pl		This is a modification of 02-searchingforcommonSNPs.pl, but seperated for SAM VCF first then CLC SNPstxt second to get the unique SNPs for CLC txt
+16.	10-searchingforcommonSNPSbtwCLCtxt&VCF.pl		This is also a modification of 02-searchingforcommonSNPs.pl, for CLC SNPtxt first then SAM VCF second to get the unique SNPS in SAM VCF
+17.	11-convertfastqtofasta_qualityscoresseperate.pl		Converting a fastq file to two separate files, 1 for the fasta and the 2nd for the quality scores	
+18.	12-convertingfrhitsamtootherrealsamfile.pl		This converts the frhit samfile that doesn't have the sam sequence to have their original sequences and quality scores
+19.	13-highlightingthecommonsnpsinCLCtxt.pl		This highlights the commonSNPs found in both VCF and CLC SNP txt in the CLC SNPtxt file
+20.	14-windowseize.pl		Creating a window seize to note positions that are higher than the norm of alignments.
+21.	15-sortingthesamfile.pl		This sorts the sam file based on the reads start positions to the sequence and sorts it details.
+22.	16-sortingthesamfileusingsomanysubmissions.pl 		To sort the sam file as of 15-sortingsamfile.pl but parallelizing it.
+23.	17-joiningthedifferentfilestogether.pl  		The joins the different files produced for 16-sortungthesamefileusingsomanysubmissions.pl into one file.
+24.	18-filteringscript.pl		A mini filtering script for fastq reads (follows some of the guidelines for GATK filtering)
+25.	19-joiningthedifferentfilestogether.pl		Joining all the different genome files together (Jen's)
+26.	20-splitpairedfile.pl		To split a paired file to two seperate sequence & quality files
+27.	21-commandlineexecution.pl		To execute commandline executions in a torque submission (of 06-COMMANDLINE.sh script)
+28.	22-extractingrawfastasequencesfromfrhitpairedreads.pl		Modification of Erin's (to create two seperate sequence files from a typical fr-hit output)
+29.	23-interleavepairedfastafiles.pl		To interleave two split fr-hit fasta files output results of 22-extractingrawfastasequencesfromfrhitpairedreads.pl.
+30.	24-relevantBLASTNcontigsfromFRHITdenovoassembly.pl		This uses the web BLAST text output and extracts all the contigs and their sequences (because all the contigs saved have hits)
+31.	25-
+32.	26-relevantBLASTNfromBLASTallcontigsfromFRHITdenovoassembly.pl		This uses the commandline BLASTALL text output and extract the contigs and sequences that have hits (because contigs that have and don't have hits are saved together)
+33.	27-relevantlistedBLASTNcontigsfromFRHITdenovoassembly.pl		This uses the list of contig numbers only and extracts the contigs and sequences (the contig numbers are the one I chose to be relevant)
+34.	28-BLASTmultiplecontigs.pl		This is megablast of all the files in a folder.
+35.	29-similarcontigfromdissimilarones.pl		Modification of 05b-* script, but to select similar and different contigs between each file
+36.	30
+37.	31-split
